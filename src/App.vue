@@ -163,46 +163,50 @@
         <Card :price="2500" :favori="true" :image="'src/assets/house2.png'" />
         <Card
           :price="2850"
+          :favori="true"
           :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
-          :image="'/public/house3.jpg'"
+          :image="'src/assets/house3.jpg'"
         />
         <Card
           :price="4500"
           :favori="true"
           :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
-          :image="'/public/house.png'"
+          :image="'src/assets/house.png'"
         />
         <Card
           :price="2850"
           :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
-          :image="'/public/house4.jpg'"
+          :image="'src/assets/house4.jpg'"
         />
         <Card
           :price="2850"
           :adresse="'2820 Perdu dans la nature'"
-          :image="'/public/house5.jpg'"
+          :image="'src/assets/house5.jpg'"
         />
-        <Card :price="2500" :favori="true" :image="'/public/house2.png'" />
+        <Card :price="2500" :image="'src/assets/house2.png'" />
         <Card
           :price="2850"
+          :favori="true"
           :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
-          :image="'/public/house3.jpg'"
+          :image="'src/assets/house3.jpg'"
         />
         <Card
           :price="4500"
           :favori="true"
           :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
-          :image="'/public/house.png'"
+          :image="'src/assets/house.png'"
         />
         <Card
           :price="2850"
+          :favori="true"
           :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
-          :image="'/public/house4.jpg'"
+          :image="'src/assets/house4.jpg'"
         />
         <Card
           :price="2850"
+          :favori="true"
           :adresse="'2820 Lake Sevilla, Perl Harbor, TX'"
-          :image="'/public/house5.jpg'"
+          :image="'src/assets/house5.jpg'"
         />
       </div>
     </main>

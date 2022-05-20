@@ -1,135 +1,354 @@
-
 <template>
-  <section class="bg-indigo-50">
-    <header>
-      <div class="p-3 mb-5 bg-gray-50 flex flex-row justify-between">
-        <div >
-          <MailOpenIcon class="inline-block w-10"/>
-          <h1 class="inline-block ml-4 mr-4 text-lg text-blue-600  ">Estatery</h1>
+  <div>
+    <header
+      class="
+        sticky
+        top-0
+        z-40
+        h-16
+        w-full
+        border-b border-b-indigo-100
+        bg-gray-100
+        px-3
+      "
+    >
+      <div class="flex h-full w-full items-center justify-between">
+        <div class="flex items-center">
+          <HomeIcon class="w-8 fill-indigo-500" />
+          <span class="font-semibold">Estatery</span>
         </div>
-        <MenuAlt4Icon class="inline-block text-right w-8"/>
-      </div>
-    </header>
-    <main>
-      <h2 class="text-lg font-bold text-center mb-4">Search proprieties to rent</h2>
-      <section class="overflow-hidden flex items-center justify-center ">
-        <div class="pt-2 relative mx-auto text-gray-600">
-          <input class="border-2 border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-            type="search" name="search" placeholder="Search location">
-          <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
-            <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
-              viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve"
-              width="512px" height="512px">
-              <path
-                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-            </svg>
+        <div class="lg:hidden">
+          <MenuIcon class="w-8 cursor-pointer" @click="MenuOpen = !MenuOpen" />
+        </div>
+        <nav
+          class="
+            absolute
+            left-0
+            top-16
+            w-full
+            -translate-y-[200%]
+            bg-slate-300
+            pl-2
+            lg:relative lg:top-0 lg:w-fit lg:translate-y-0 lg:bg-transparent
+          "
+          :class="MenuOpen && 'translate-y-0'"
+        >
+          <ul class="flex flex-col gap-8 py-4 font-bold lg:flex-row">
+            <li>Rent</li>
+            <li>Buy</li>
+            <li>Sell</li>
+            <li>Manage Property</li>
+            <li>Ressources</li>
+          </ul>
+        </nav>
+        <div class="menu-text gap-4">
+          <button class="bouton2 mt-1 mb-1 font-bold text-[#6366F1]">
+            Login
+          </button>
+          <button class="bouton1 mr-2 mt-1 mb-1 font-bold text-white">
+            Sign Up
           </button>
         </div>
-      </section>
-      <section>
-      </section>
-      
-        <div class="grid grid-flow-row-dense grid-cols-[repeat(auto-fit,minmax(400px,1fr))]">
-            <card 
-              :nbrbath="1"
-              :nbrbed="4"
-              :price="2800"
-              :favori="true"
-              image="/images-maisons/maison-1.jpg"
-              location="Beverly Springfield"
-              size="6x75²"
-              adress="(256) 574-4323
-                      1265 King St
-                      Midland City, Alabama(AL), 36350"/>
-            <card 
-              :nbrbath="2"
-              :nbrbed="5"
-              :price="5000"
-              :favori="false"
-              image="/images-maisons/maison-2.jpg"
-              location="Nowhere Town"
-              size="240m²"
-              adress="(256) 632-2378
-                      1263 County Rd #295
-                      Higdon, Alabama(AL), 35979"/>
-          </div>
-          <div class="text-center my-10">
-            <ChevronLeftIcon class="inline-block text-right w-8"/>
-            <p class="inline-block ml-4 mr-4 text-base text-white bg-indigo-900 py-2 px-4 rounded-full ">1</p>
-            <p class="inline-block ml-4 mr-4 text-base text-indigo-900 bg-White py-2 px-4 rounded-full ">2</p>
-            <p class="inline-block ml-4 mr-4 text-base text-indigo-900 py-2 px-5 ">...</p>
-            <p class="inline-block ml-4 mr-4 text-base text-indigo-900 bg-White py-2 px-3 rounded-full ">10</p>
-            <ChevronRightIcon class="inline-block text-right w-8"/>
-          </div>
-      </main>
-      <footer class="p-3 mt-5 mb-5 bg-gray-50">
-          <MailOpenIcon class="inline-block w-10"/>
-          <p class="inline-block ml-4 mr-4 text-lg text-blue-600 ">Estatery</p>
-        <div class="grid grid-rows-3 grid-flow-col">
-          <div class="m-5">
-            <h3 class="font-bold mb-2">SELL A HOME</h3>
-            <p>Request an offer</p>
-            <p>Pricing</p>
-            <p>Reviews</p>
-            <p>Stories</p>
-          </div>
-          <div class="m-5">
-            <h3 class="font-bold mb-2">BUY A HOME</h3>
-            <p>Buy</p>
-            <p>Finance</p>
-          </div>
-          <div class="m-5">
-            <h3 class="font-bold mb-2">BUY, RENT AND SELL</h3>
-            <p>Buy & sell proprieties</p>
-            <p>Rent home</p>
-            <p>Builder trade-up</p>
-          </div>
-          <div class="m-5">
-            <h3 class="font-bold mb-2">TERMS &  PRIVACY</h3>
-            <p>Trust & Safety</p>
-            <p>Terms of Service</p>
-            <p>Privacy Policy</p>
-          </div>
-          <div class="m-5">
-            <h3 class="font-bold mb-2">ABOUT</h3>
-            <p>Company</p>
-            <p>How it works</p>
-            <p>Contact</p>
-            <p>Invertors</p>
-          </div>
-          <div class="m-5">
-            <h3 class="font-bold mb-2">RESSOURCES</h3>
-            <p>Blog</p>
-            <p>Guides</p>
-            <p>FAQ</p>
-            <p>Help Center</p>
+      </div>
+    </header>
+    <main class="bg-gray-50 py-14 px-4 font-inter">
+      <div class="mx-auto mb-7 flex w-4/5 flex-col gap-7">
+        <div class="flex flex-col gap-7 lg:flex-row lg:justify-between">
+          <h2 class="text-center text-4xl font-bold text-indigo-900">
+            Search properties to rent
+          </h2>
+          <div class="flex items-center">
+            <input
+              type="search"
+              placeholder="Search with Search Bar"
+              class="
+                h-12
+                w-full
+                rounded-lg
+                border-2 border-indigo-100
+                px-4
+                placeholder:text-xs
+              "
+            />
+            <ChevronDownIcon
+              class="
+                -ml-8
+                h-5
+                w-5
+                rounded-full
+                bg-indigo-100
+                stroke-indigo-600
+                p-1
+              "
+            />
           </div>
         </div>
-        <hr> <hr>
-
-        <div class="text-center my-5">
-          <p class="text-sm text-gray-400">2021 Estatery. All rights reserved</p>
-          <AtSymbolIcon class="inline-block w-5 m-3"/>
-          <ChatAltIcon class="inline-block w-5 m-3"/>          
-          <QuestionMarkCircleIcon class="inline-block w-5 m-3"/>
-          <BadgeCheckIcon class="inline-block w-5 m-3"/>
-
+        <div class="flex items-center lg:hidden">
+          <input
+            type="search"
+            placeholder="Search Location"
+            class="
+              h-16
+              w-full
+              rounded-lg
+              border-2 border-indigo-100
+              px-4
+              placeholder:text-xs
+            "
+          />
+          <SearchIcon
+            class="
+              -ml-12
+              h-10
+              w-10
+              rounded-sm
+              bg-indigo-600
+              stroke-indigo-100
+              p-1
+            "
+          />
         </div>
-
-      </footer>
-  </section>
+        <div
+          class="
+            hidden
+            h-24
+            w-full
+            items-center
+            gap-4
+            rounded-lg
+            border-2 border-indigo-100
+            px-4
+            font-inter
+            lg:flex
+          "
+        >
+          <div class="w-1/2 min-w-max border-r-2 border-gray-300 px-4">
+            <span class="text-base text-gray-900">Location</span>
+            <p class="text-lg font-bold">New York, USA</p>
+          </div>
+          <div class="w-1/2 min-w-max border-r-2 border-gray-300 px-4">
+            <span class="text-base text-gray-900">When</span>
+            <p class="text-lg font-bold">Select Move-in Date</p>
+          </div>
+          <div class="w-1/2 min-w-max border-r-2 border-gray-300 px-4 pr-10">
+            <span class="text-base text-gray-900">Price</span>
+            <p class="text-lg font-bold">$500-$2,500</p>
+          </div>
+          <div class="flex w-1/2 items-center justify-center">
+            <p
+              class="
+                rounded-sm
+                bg-indigo-600
+                px-6
+                py-3
+                text-center text-indigo-100
+              "
+            >
+              Search
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          mx-auto
+          grid
+          w-4/5
+          grid-cols-[repeat(auto-fit,minmax(300px,1fr))]
+          justify-center
+          gap-7
+        "
+      >
+        <Card :price="2500" :favori="true" :image="'src/assets/house2.png'" />
+        <Card
+          :price="2850"
+          :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
+          :image="'/public/house3.jpg'"
+        />
+        <Card
+          :price="4500"
+          :favori="true"
+          :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
+          :image="'/public/house.png'"
+        />
+        <Card
+          :price="2850"
+          :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
+          :image="'/public/house4.jpg'"
+        />
+        <Card
+          :price="2850"
+          :adresse="'2820 Perdu dans la nature'"
+          :image="'/public/house5.jpg'"
+        />
+        <Card :price="2500" :favori="true" :image="'/public/house2.png'" />
+        <Card
+          :price="2850"
+          :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
+          :image="'/public/house3.jpg'"
+        />
+        <Card
+          :price="4500"
+          :favori="true"
+          :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
+          :image="'/public/house.png'"
+        />
+        <Card
+          :price="2850"
+          :adresse="'2820 Lake Sevilla, Palm Harbor, TX'"
+          :image="'/public/house4.jpg'"
+        />
+        <Card
+          :price="2850"
+          :adresse="'2820 Lake Sevilla, Perl Harbor, TX'"
+          :image="'/public/house5.jpg'"
+        />
+      </div>
+    </main>
+    <footer>
+      <div class="flex flex-col pt-4 lg:flex-row">
+        <div class="mx-16 mb-8 mt-3 flex items-center">
+          <HomeIcon class="w-8 fill-indigo-500" />
+          <span class="font-semibold">Estatery</span>
+        </div>
+        <div class="mx-5 flex w-full gap-28 pb-16 lg:flex-col">
+          <div
+            class="flex flex-col gap-3 lg:w-full lg:flex-row lg:justify-around"
+          >
+            <div class="flex flex-col">
+              <p class="text-base font-semibold">Sell A Home</p>
+              <span class="text-xs text-gray-400">Request an offer</span>
+              <span class="text-xs text-gray-400">Pricing</span>
+              <span class="text-xs text-gray-400">Reviews</span>
+              <span class="text-xs text-gray-400">Stories</span>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-base font-semibold">Buy A Home</p>
+              <span class="text-xs text-gray-400">Buy</span>
+              <span class="text-xs text-gray-400">Finance</span>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-base font-semibold">Buy, Rent and Sell</p>
+              <span class="text-xs text-gray-400">Buy & sell properties</span>
+              <span class="text-xs text-gray-400">Rent home</span>
+              <span class="text-xs text-gray-400">Builder trade-up</span>
+            </div>
+          </div>
+          <div
+            class="flex flex-col gap-3 lg:w-full lg:flex-row lg:justify-around"
+          >
+            <div class="flex flex-col">
+              <p class="text-base font-semibold">Terms & Privacy</p>
+              <span class="text-xs text-gray-400">Trust & Safety</span>
+              <span class="text-xs text-gray-400">Terms of Service</span>
+              <span class="text-xs text-gray-400">Privacy Policy</span>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-base font-semibold">About</p>
+              <span class="text-xs text-gray-400">Company</span>
+              <span class="text-xs text-gray-400">How it works</span>
+              <span class="text-xs text-gray-400">Contact</span>
+              <span class="text-xs text-gray-400">Investitor</span>
+            </div>
+            <div class="flex flex-col">
+              <p class="text-base font-semibold">Resources</p>
+              <span class="text-xs text-gray-400">Blog</span>
+              <span class="text-xs text-gray-400">Guides</span>
+              <span class="text-xs text-gray-400">FAQ</span>
+              <span class="text-xs text-gray-400">Help Center</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          my-10
+          flex flex-col
+          items-center
+          justify-center
+          gap-2
+          border-t border-t-indigo-100
+          pt-10
+          lg:flex-row
+        "
+      >
+        <span class="text-xs text-gray-400"
+          >2021 Estatery. All rights reserved</span
+        >
+        <span class="flex items-center gap-4">
+          <insta class="w-4" />
+          <fb class="w-4" />
+          <twitter class="w-4" />
+          <linkedin class="w-5" />
+        </span>
+      </div>
+    </footer>
+  </div>
 </template>
+<style >
+.bouton1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  background: #6366f1;
+  border-radius: 8px;
+}
+.bouton2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 22px;
+  border: 2px solid #c7d2fe;
+  border-radius: 8px;
+}
+.menu {
+  display: block;
+}
+.menu-text {
+  display: none;
+  align-items: center;
+}
+/** média **/
+@media screen and (min-width: 1024px) {
+  .menu {
+    display: none;
+  }
+  .menu-text {
+    display: flex;
+  }
+}
+</style>
+ 
+<script >
+import Card from "./components/Card.vue";
+import { HomeIcon } from "@heroicons/vue/solid";
+import { MenuIcon, ChevronDownIcon, SearchIcon } from "@heroicons/vue/outline";
+import insta from "./components/icones/insta.vue";
+import fb from "./components/icones/fb.vue";
+import twitter from "./components/icones/twitter.vue";
+import linkedin from "./components/icones/linkedin.vue";
 
-
-<script>
-import card from "./components/card.vue";
-import bouton from "./components/bouton.vue";
-import { ArchiveIcon, BellIcon, AdjustmentsIcon, SearchIcon, UserAddIcon, ChatIcon, HomeIcon, MailOpenIcon, MenuAlt4Icon, ChevronRightIcon, ChevronLeftIcon, AtSymbolIcon, QuestionMarkCircleIcon, ChatAltIcon, BadgeCheckIcon } from "@heroicons/vue/outline";
 export default {
   name: "App",
-  components: { card, bouton, ArchiveIcon, BellIcon, AdjustmentsIcon, SearchIcon, UserAddIcon, ChatIcon, HomeIcon, MailOpenIcon, MenuAlt4Icon, ChevronRightIcon, ChevronLeftIcon, AtSymbolIcon, QuestionMarkCircleIcon, ChatAltIcon, BadgeCheckIcon },
+  components: {
+    Card,
+    HomeIcon,
+    MenuIcon,
+    insta,
+    fb,
+    twitter,
+    linkedin,
+    ChevronDownIcon,
+    SearchIcon,
+  },
+  data() {
+    return {
+      MenuOpen: false,
+    };
+  },
 };
 </script>
-
 

@@ -26,10 +26,10 @@
             justify-center
             rounded-full
             border-2 border-indigo-100
-          "
-        >
+          "./icones/Dimensions.vue
+        >./icones./icones/bed.vue
           <HeartIcon class="h-6 stroke-indigo-500" :class="{'fill-red-500 stroke-red-500': favori}"></HeartIcon>
-        </div>
+        </div>./icones/Heart.vue
       </div>
       <p class="text-base font-normal text-gray-900">
         {{adresse}}

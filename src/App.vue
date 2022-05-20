@@ -25,6 +25,7 @@
             absolute
             left-0
             top-16
+            text-xl
             w-full
             -translate-y-[200%]
             bg-slate-300
